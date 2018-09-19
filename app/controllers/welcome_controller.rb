@@ -11,8 +11,6 @@ class WelcomeController < ApplicationController
   include HTTParty
   include JSON
 
-  @access_token = access_token
-
   def callback
     @authorization_code = params["code"]
 
