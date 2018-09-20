@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  get 'projects/resources'
+
   get 'welcome/index'
 
   get 'welcome/callback'
-
-  get 'welcome/resources'
 
   root 'welcome#index'
 

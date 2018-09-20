@@ -24,19 +24,8 @@ class WelcomeController < ApplicationController
         obj = JSON.parse(response)
         puts response
 
-        access_token = obj['access_token']
-        puts access_token
-
-  end
-
-  def resources
-    @company_id = params["company_id"]
-    @projects = []
-
-    response = RestClient.get("https://app.procore.com/vapid/projects?company_id=#{@company_id}", {"Authorization: Bearer" => access_token})
-    projects_response = JSON.parse(response.body)
-
-    puts projects_response
+        @access_token = obj['access_token']
+        puts @access_token
 
   end
 end
