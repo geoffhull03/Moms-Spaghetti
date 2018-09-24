@@ -15,3 +15,42 @@
 		<% end %>
 		</tbody>
 	</table><br>
+
+
+  <table class="item-list sortable">
+  		<thead>
+  			<tr>
+  				<th>ID</th>
+  				<th>Description</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Unit of Measure</th>
+          <th>Unit Cost</th>
+          <th>Units Remaining</th>
+          <th>Forecast To Complete</th>
+          <th>Planned Total Cost</th>
+          <th>Total Units</th>
+          <th>Utilization</th>
+          <th>Budget Line Item ID</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  		<% @monitoring_resources.each do |monitoring_resource| %>
+  			<tr>
+  				<td><%= monitoring_resource['id'] %></td>
+          <td><%= monitoring_resource['description'] %></td>
+          <td><%= monitoring_resource['start_date'] %></td>
+          <td><%= monitoring_resource['end_date'] %></td>
+          <td><%= monitoring_resource['unit_of_measure'] %></td>
+          <td><%= monitoring_resource['unit_cost'] %></td>
+          <td><%= monitoring_resource['units_remaining'] %></td>
+          <td><%= monitoring_resource['forecast_to_complete'] %></td>
+          <td><%= monitoring_resource['planned_total_cost'] %></td>
+          <td><%= monitoring_resource['total_units'] %></td>
+          <td><%= monitoring_resource['utilization'] %></td>
+          <td><%= monitoring_resource['budget_line_item_id'] %></td>
+
+  			</tr>
+  		<% end %>
+  		</tbody>
+  	</table><br>

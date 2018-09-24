@@ -17,12 +17,12 @@ class ProjectsController < WelcomeController
         arr.push(project['id'])
         puts arr
 
-          arr.each do |project_id|
-            response_two = RestClient.get("https://app.procore.com/vapid/projects/#{project_id}/monitoring_resources", {"Authorization": "Bearer #{session[:access_token]}"}),
-            monitoring_resources = JSON.parse(response_two)
-            puts monitoring_resources
+        monitoring_resources = RestClient.get("https://app.procore.com/vapid/projects/#{arr[0]}/monitoring_resources", {"Authorization": "Bearer #{session[:access_token]}"})
+        @monitoring_resources = JSON.parse(monitoring_resources)
+        puts @monitoring_resources
 
-        end
+
+
       end
   end
 end
