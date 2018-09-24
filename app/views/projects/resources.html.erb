@@ -1,2 +1,17 @@
 <h1> Active Projects found for Company (ID <%= @company_id %>):</h1>
-  <h3><%= @projects[0]['name'] %> </h3>
+<table class="item-list sortable">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @projects.each do |project| %>
+			<tr>
+				<td><%= project['id'] %></td>
+        <td><%= project['name'] %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table><br>

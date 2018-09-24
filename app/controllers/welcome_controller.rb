@@ -24,8 +24,7 @@ class WelcomeController < ApplicationController
         obj = JSON.parse(response)
         puts response
 
-        @access_token = obj['access_token']
-        puts @access_token
+        session[:access_token]= obj['access_token']
 
   end
 end
