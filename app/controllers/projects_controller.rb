@@ -19,7 +19,11 @@ class ProjectsController < WelcomeController
 
         monitoring_resources = RestClient.get("https://app.procore.com/vapid/projects/#{arr[0]}/monitoring_resources", {"Authorization": "Bearer #{session[:access_token]}"})
         @monitoring_resources = JSON.parse(monitoring_resources)
-        puts @monitoring_resources
+          if @monitoring_resources == []
+            puts "#{project['name']} (#{project['id']}) has no monitoring resources, loser"
+          else puts @monitoring_resources
+          end
+
 
 
 
