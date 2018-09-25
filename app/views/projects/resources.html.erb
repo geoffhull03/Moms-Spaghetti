@@ -1,4 +1,4 @@
-<h1> Active Projects found for Company (ID <%= @company_id %>):</h1>
+<h3> Active Projects found for Company (ID <%= @company_id %>):</h3>
 <table class="item-list sortable">
 		<thead>
 			<tr>
@@ -16,11 +16,10 @@
 		</tbody>
 	</table><br>
 
-
+<h3> Monitoring Resources found for Company (ID <%= @company_id %>):</h3>
   <table class="item-list sortable">
   		<thead>
   			<tr>
-  				<th>ID</th>
   				<th>Description</th>
           <th>Start Date</th>
           <th>End Date</th>
@@ -35,20 +34,19 @@
   			</tr>
   		</thead>
   		<tbody>
-  		<% @monitoring_resources.each do |monitoring_resource| %>
+  		<% @monitoring_resources.each do |resource| %>
   			<tr>
-  				<td><%= monitoring_resource['id'] %></td>
-          <td><%= monitoring_resource['description'] %></td>
-          <td><%= monitoring_resource['start_date'] %></td>
-          <td><%= monitoring_resource['end_date'] %></td>
-          <td><%= monitoring_resource['unit_of_measure'] %></td>
-          <td><%= monitoring_resource['unit_cost'] %></td>
-          <td><%= monitoring_resource['units_remaining'] %></td>
-          <td><%= monitoring_resource['forecast_to_complete'] %></td>
-          <td><%= monitoring_resource['planned_total_cost'] %></td>
-          <td><%= monitoring_resource['total_units'] %></td>
-          <td><%= monitoring_resource['utilization'] %></td>
-          <td><%= monitoring_resource['budget_line_item_id'] %></td>
+          <td><%= resource['description'] %></td>
+          <td><%= resource['start_date'] %></td>
+          <td><%= resource['end_date'] %></td>
+          <td><%= resource['unit_of_measure'] %></td>
+          <td><%= resource['unit_cost'] %></td>
+          <td><%= resource['units_remaining'] %></td>
+          <td><%= resource['forecast_to_complete'] %></td>
+          <td><%= resource['planned_total_cost'] %></td>
+          <td><%= resource['total_units'] %></td>
+          <td><%= resource['utilization'] %></td>
+          <td><%= resource['budget_line_item_id'] %></td>
   			</tr>
   		<% end %>
   		</tbody>
