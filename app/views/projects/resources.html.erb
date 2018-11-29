@@ -20,7 +20,7 @@
   <table class="item-list sortable">
   		<thead>
   			<tr>
-  				<th>Description</th>
+  				<th>Name</th>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Unit of Measure</th>
@@ -31,6 +31,7 @@
           <th>Total Units</th>
           <th>Utilization</th>
           <th>Budget Line Item ID</th>
+					<th>Project</th>
   			</tr>
   		</thead>
   		<tbody>
@@ -47,7 +48,7 @@
           <td><%= resource['total_units'] %></td>
           <td><%= resource['utilization'] %></td>
           <td><%= resource['budget_line_item_id'] %></td>
-  			</tr>
+					<td><%= %></td>
   		<% end %>
   		</tbody>
   	</table><br>
