@@ -21,34 +21,19 @@
   		<thead>
   			<tr>
   				<th>Name</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Unit of Measure</th>
-          <th>Unit Cost</th>
-          <th>Units Remaining</th>
-          <th>Forecast To Complete</th>
-          <th>Planned Total Cost</th>
-          <th>Total Units</th>
-          <th>Utilization</th>
-          <th>Budget Line Item ID</th>
-					<th>Project</th>
+					<th> Select to view Monitoring Resources </th>
   			</tr>
   		</thead>
   		<tbody>
   		<% @monitoring_resources.each do |resource| %>
   			<tr>
           <td><%= resource['description'] %></td>
-          <td><%= resource['start_date'] %></td>
-          <td><%= resource['end_date'] %></td>
-          <td><%= resource['unit_of_measure'] %></td>
-          <td><%= resource['unit_cost'] %></td>
-          <td><%= resource['units_remaining'] %></td>
-          <td><%= resource['forecast_to_complete'] %></td>
-          <td><%= resource['planned_total_cost'] %></td>
-          <td><%= resource['total_units'] %></td>
-          <td><%= resource['utilization'] %></td>
-          <td><%= resource['budget_line_item_id'] %></td>
-					<td><%= %></td>
-  		<% end %>
+					<td>
+						<label>
+  						<input type="checkbox">
+  						<span class="checkmark"></span>
+						</label>
+					</td>
+  		  <% end %>
   		</tbody>
   	</table><br>
