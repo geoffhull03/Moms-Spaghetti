@@ -9,12 +9,12 @@ class ProjectsController < WelcomeController
   def resources
     @company_id = params["company_id"]
 
-    response = RestClient.get("https://app.procore.com/vapid/projects?company_id=#{@company_id}", {"Authorization": "Bearer #{session[:access_token]}"})
+    response = RestClient.get("https://api.procore.com/vapid/projects?company_id=#{@company_id}", {"Authorization": "Bearer #{session[:access_token]}"})
     @projects = JSON.parse(response)
 
     @monitoring_resources = []
       @projects.each do |project|
-        monitoring_resources = RestClient.get("https://app.procore.com/vapid/projects/#{project['id']}/monitoring_resources", {"Authorization": "Bearer #{session[:access_token]}"})
+        monitoring_resources = RestClient.get("https://api.procore.com/vapid/projects/#{project['id']}/monitoring_resources", {"Authorization": "Bearer #{session[:access_token]}"})
         @monitoring_resources += JSON.parse(monitoring_resources)
 
 
