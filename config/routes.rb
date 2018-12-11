@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'projects/resources'
 
+  get 'projects/forecast'
+
   get 'welcome/index'
 
   get 'welcome/callback'

@@ -4,19 +4,36 @@
 table {
     border: 2px solid black;
     margin-top: 20px;
-    width: 100%;
+    overflow-x:auto
 }
 
 th {
    border: 1px solid black;
    text-align: center;
+   width: 5%;
+
  }
 
 td {
    text-align: center;
    border: 1px solid black;
+   width: 5%;
 }
 
-.table-1 {
-  width: 40%;
+.parent_resources {
+  overflow-x:auto
+
+}
+
+.months {
+  background-color: red;
+  opacity: 50%;
+}
+
+.monitored-checkbox {
+  width: 50%
+}
+
+.active-projects {
+  width: 50%;
 }

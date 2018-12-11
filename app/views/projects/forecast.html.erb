@@ -1,0 +1,55 @@
+<h3> Monitoring Resources found for Company (ID <%= @company_id %>):</h3>
+<% @monitoring_resources.each do |resource| %>
+  <% end_date = resource['end_date'] %>
+
+  <table class="parent_resources">
+  		<thead>
+  			<tr>
+  				<th>Name</th>
+					<th>End Date </th>
+          <th>Cost Amount </th>
+          <th> January </th>
+          <th> February </th>
+          <th> March </th>
+          <th> April </th>
+          <th> May </th>
+          <th> June </th>
+          <th> July </th>
+          <th> August</th>
+          <th> September</th>
+          <th> October</th>
+          <th> November</th>
+          <th> December</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			<tr>
+          <td><%= resource['description'] %></td>
+					<td><%= end_date %></td>
+          <td><%= "$" + resource['unit_cost']%></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+  		  <% end %>
+  		</tbody>
+  	</table><br>
+
+    <table class="calendar">
+        <thead>
+          <tr>
+
+
+          </tr>
+
+        </thead>
+
+    </table>

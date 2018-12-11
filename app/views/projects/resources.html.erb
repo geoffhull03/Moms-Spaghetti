@@ -1,5 +1,5 @@
 <h3> Active Projects found for Company (ID <%= @company_id %>):</h3>
-<table class="table-1">
+<table class="active-projects">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -17,7 +17,7 @@
 	</table><br>
 
 <h3> Monitoring Resources found for Company (ID <%= @company_id %>):</h3>
-  <table class="item-list sortable">
+  <table class="monitored-checkbox">
   		<thead>
   			<tr>
   				<th>Name</th>
@@ -37,3 +37,8 @@
   		  <% end %>
   		</tbody>
   	</table><br>
+
+		<form action="/projects/forecast" method = "get">
+			<input type="text" name="company_id">
+			<input type="submit" value="Submit">
+		</form>
