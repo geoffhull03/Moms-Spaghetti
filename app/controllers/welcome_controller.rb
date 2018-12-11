@@ -20,7 +20,7 @@ class WelcomeController < ApplicationController
           "code" => @authorization_code,
           "redirect_uri" => REDIRECT_URL}
 
-        response = RestClient.post('https://login.procore.com/oauth/token', request.to_json, {content_type: :json, accept: :json})
+        response = RestClient.post('https://api-sandbox-monthly.procore.com/oauth/token', request.to_json, {content_type: :json, accept: :json})
         obj = JSON.parse(response)
         puts response
 

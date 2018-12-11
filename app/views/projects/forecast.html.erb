@@ -1,6 +1,6 @@
-<h3> Monitoring Resources found for Company (ID <%= @company_id %>):</h3>
+<h3> Monitoring Resources Report</h3>
 <% @monitoring_resources.each do |resource| %>
-  <% end_date = resource['end_date'] %>
+  <% end_date = Date.parse(resource['end_date']).strftime("%B %e, %Y") %>
 
   <table class="parent_resources">
   		<thead>
@@ -8,6 +8,7 @@
   				<th>Name</th>
 					<th>End Date </th>
           <th>Cost Amount </th>
+          <br></br>
           <th> January </th>
           <th> February </th>
           <th> March </th>
@@ -27,7 +28,7 @@
           <td><%= resource['description'] %></td>
 					<td><%= end_date %></td>
           <td><%= "$" + resource['unit_cost']%></td>
-          <td> </td>
+          <td  class="months"> </td>
           <td> </td>
           <td> </td>
           <td> </td>
@@ -42,14 +43,3 @@
   		  <% end %>
   		</tbody>
   	</table><br>
-
-    <table class="calendar">
-        <thead>
-          <tr>
-
-
-          </tr>
-
-        </thead>
-
-    </table>

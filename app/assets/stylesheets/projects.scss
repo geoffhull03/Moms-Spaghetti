@@ -1,39 +1,72 @@
-// Place all the styles related to the projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html,body {
+  margin: 20px;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 90%;
+  color: #333;
+  justify-content: center;
+}
+
+.table-wrapper {
+  max-width: 700px;
+  overflow: scroll;
+}
+
 table {
-    border: 2px solid black;
-    margin-top: 20px;
-    overflow-x:auto
+  position: relative;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%
+
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  width: 5%;
 }
 
 th {
-   border: 1px solid black;
-   text-align: center;
-   width: 5%;
+  background-color: #eee;
+  position: sticky;
+  top: -1px;
+  z-index: 2;
 
- }
-
-td {
-   text-align: center;
-   border: 1px solid black;
-   width: 5%;
+  &:first-of-type {
+    left: 0;
+    z-index: 3;
+  }
 }
 
-.parent_resources {
-  overflow-x:auto
-
-}
-
-.months {
-  background-color: red;
-  opacity: 50%;
-}
-
-.monitored-checkbox {
-  width: 50%
+tbody tr td:first-of-type {
+  background-color: #eee;
+  position: sticky;
+  left: -1px;
+  text-align: center;
 }
 
 .active-projects {
+  width: 40%;
+  text-align: center;
+}
+
+.parent_resources {
+  width: 100%;
+  border-collapse:separate;
+  border-spacing:0 20px;
+  border: 0px;
+}
+
+.monitored-checkbox {
   width: 50%;
+}
+
+.months {
+
 }
