@@ -1,12 +1,31 @@
 <h3> Monitoring Resources Report</h3>
   <h5>Today's Date:  <%= Date.today.strftime("%B %e, %Y") %> </h5>
 
-  <input type="text" data-provide='datepicker'>
+  <div class="container">
+      <div class="row">
+          <div class='col-sm-6'>
+              <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker1').datetimepicker();
+              });
+          </script>
+      </div>
+  </div>
+
 
 <% @monitoring_resources.each do |resource| %>
   <% end_date = Date.parse(resource['end_date']).strftime("%B %e, %Y") %>
+  <% unit_cost = resource['unit_cost'].to_i.round %>
     <% %>
-    <%  %>
     <% %>
     <% %>
   <table class="parent_resources">
@@ -34,7 +53,7 @@
   			<tr>
           <td><%= resource['description'] %></td>
 					<td><%= end_date %></td>
-          <td><%= "$" + resource['unit_cost']%></td>
+          <td><%= "$" + unit_cost.to_s %></td>
           <td  class="months"> </td>
           <td> </td>
           <td> </td>
