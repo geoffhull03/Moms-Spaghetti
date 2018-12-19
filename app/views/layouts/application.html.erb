@@ -12,9 +12,14 @@
   <body>
     <div class="container">
       <ul class="nav nav-tabs">
-        <li><%= link_to "Login", welcome_index_path %></li>
-        <li><%= link_to "Home Page", welcome_callback_path %></li>
-        <li><%= link_to "Monitoring Resources", projects_resources_path %></li>
+        <% if session[:access_token]%>
+          <li><%= link_to "Login", welcome_index_path %></li>
+          <li><%= link_to "Home Page", welcome_callback_path %></li>
+          <li><%= link_to "Monitoring Resources", projects_resources_path %></li>
+
+        <% else %>
+            <li><%= link_to "Login", welcome_index_path %></li>
+        <% end %>
       </ul>
 
       <%= yield %>

@@ -22,9 +22,7 @@ class WelcomeController < ApplicationController
 
         response = RestClient.post('https://login.procore.com/oauth/token', request.to_json, {content_type: :json, accept: :json})
         obj = JSON.parse(response)
-        puts response
 
         session[:access_token]= obj['access_token']
-
   end
 end

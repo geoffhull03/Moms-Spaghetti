@@ -38,7 +38,6 @@ class ProjectsController < WelcomeController
 
 
         puts @monitoring_resources
-      end
-
+        end
   end
 end
