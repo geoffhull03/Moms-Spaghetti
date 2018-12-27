@@ -21,6 +21,8 @@
       </div>
   </div>
 
+<%months = ["January", "February", "March", "April", "May","June", "July", "August", "September", "October", "November", "December"] %>
+<% puts months[0] %>
 
 <% @monitoring_resources.each do |resource| %>
   <% end_date = Date.parse(resource['end_date']).strftime("%B %e, %Y") %>
@@ -35,18 +37,18 @@
 					<th>End Date </th>
           <th>Cost Amount </th>
           <br></br>
-          <th> January </th>
-          <th> February </th>
-          <th> March </th>
-          <th> April </th>
-          <th> May </th>
-          <th> June </th>
-          <th> July </th>
-          <th> August</th>
-          <th> September</th>
-          <th> October</th>
-          <th> November</th>
-          <th> December</th>
+          <th> <%= months[0] %> </th>
+          <th> <%= months[1] %> </th>
+          <th> <%= months[2] %> </th>
+          <th> <%= months[3] %> </th>
+          <th> <%= months[4] %> </th>
+          <th> <%= months[5] %> </th>
+          <th> <%= months[6] %> </th>
+          <th> <%= months[7] %> </th>
+          <th> <%= months[8] %> </th>
+          <th> <%= months[9] %> </th>
+          <th> <%= months[10] %> </th>
+          <th> <%= months[11] %> </th>
   			</tr>
   		</thead>
   		<tbody>
@@ -54,7 +56,7 @@
           <td><%= resource['description'] %></td>
 					<td><%= end_date %></td>
           <td><%= "$" + unit_cost.to_s %></td>
-          <td  class="months"> </td>
+          <td> </td>
           <td> </td>
           <td> </td>
           <td> </td>

@@ -1,40 +1,34 @@
-<h3> Active Projects found for Company (ID <%= @company_id %>):</h3>
-
-<table class="active-projects">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-			</tr>
-		</thead>
-		<tbody>
-		<% @projects.each do |project| %>
-			<tr>
-				<td><%= project['id'] %></td>
-        <td><%= project['name'] %></td>
-			</tr>
-		<% end %>
-		</tbody>
-	</table><br>
+<script type='text/javascript'>
+$(document).ready(function(){
+   $('#check_all').on("click", function() {
+     var checkboxes = $("checked_resources");
+     if(checkboxes.prop("checked")){
+        checkboxes.prop("checked",false);
+     } else {
+        checkboxes.prop("checked",true);
+     }
+   });
+});
+</script>
 
 <h3> Select Resources to View (ID <%= @company_id %>):</h3>
+<button type="button" id="check_all" class="btw">
+		<%="Check all/Uncheck all"%>
+	</button><br><br>
   <table class="monitored-checkbox">
   		<thead>
   			<tr>
+					<th>Project </th>
   				<th>Name</th>
-					<th> Select to view Monitored Resources Forecast </th>
+					<th>Select to view Monitored Resources Forecast </th>
   			</tr>
   		</thead>
   		<tbody>
   		<% @monitoring_resources.each do |resource| %>
   			<tr>
+					<td><%=%> </td>
           <td><%= resource['description'] %></td>
-					<td>
-						<label>
-  						<input type="checkbox">
-  						<span class="checkmark"></span>
-						</label>
-					</td>
+					<td><%= check_box_tag 'checked_resources[]', resource['description'], false, class: 'chkbox' %></td>
 				</tr>
   		  <% end %>
   		</tbody>
